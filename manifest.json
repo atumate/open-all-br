@@ -1,0 +1,31 @@
+{
+	"oabr_author": "nixni",
+	"oabr_repo": "https://github.com/nixni/open-all-br",
+	
+	"name": "Open all BR",
+	"version": "0.2",
+	"description": "Open all Baidu Result with tripl-click",
+	"icons": {
+		"16": "images/open_all_br.png",
+		"32": "images/open_all_br.png",
+		"48": "images/open_all_br.png",
+		"128": "images/open_all_br.png"
+	},
+
+	"permissions": [ "storage","tabs","activeTab"],
+	"manifest_version": 2,
+
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["https://www.baidu.com/*"],
+			"js": ["grab_links.js"]
+		}
+	]
+
+
+}
